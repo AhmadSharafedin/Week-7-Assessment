@@ -5,9 +5,9 @@ console.log('GOOD LUCK 👩‍💻 👨‍💻')
 Usind Map
 Create a function called MultiByNum1OrNum2
 that takes an array of numbers and two numbers as a parameter
-and return a new array after mutiple each elemnt to the num1
-if the module of this elemnt to num1 is 0
-otherwise multiple the elemt to num2
+and return a new array after multiple each elemnt to the num1
+if the module of this element to num1 is 0
+otherwise multiple the element to num2
 
 var arrOfNum1 = [1,5,2]
 Example: 
@@ -22,9 +22,16 @@ Output =>
 [49, 20, 500]
 
 */
-
-function MultiByNum1OrNum2() {
-  // WRITE YOUR CODE UNDER THIS LINE         
+var arrOfNum2 = [7,2,50]
+function MultiByNum1OrNum2(arr,num1,num2) {
+  // WRITE YOUR CODE UNDER THIS LINE  
+var result=arr.map(function(element){
+if (element % num1 === 0)
+return element * num1
+else 
+return element * num2
+});
+ return result
 }
 
 /* Q2:
@@ -32,8 +39,8 @@ Using Filter
 Create a function called longerAndYounger
 that takes an array of objects and 2 numbers as a parameter
 and return a new array with the object has 
-a name longer than the first parameter
-and in the same time less than the second parameters 
+a name longer than the second parameter
+and in the same time the age less than the third parameter 
 
 var arrOfObj1 = [
   { name: "alex" ,age:22},
@@ -57,9 +64,20 @@ Output =>
   { name: "mercer",age:26}
 ]
 */
-
-function longerAndYounger() {
-  // WRITE YOUR CODE UNDER THIS LINE         
+var arrOfObj1 = [
+  { name: "alex" ,age:22},
+  { name: "mercer",age:26},
+  { name: "alice" ,age:33},
+  { name: "zaheer",age:35},
+  { name: "elizabeth",age:45}
+  ]
+function longerAndYounger(arrObj,num1,num2){
+  // WRITE YOUR CODE UNDER THIS LINE 
+  var result=arrObje.filter(function(element,index,array){
+    if (element.age > num1 && element.age < num2)
+    return element
+  });   
+  return result
 }
 
 /* Q3:
@@ -89,10 +107,22 @@ Output =>
 "alice, fried chiken, pizaa, burger, hot dog, eggs"
   
 */
-function nameAndAllFoods() {
-  // WRITE YOUR CODE UNDER THIS LINE         
+var arrOfObj2 = [
+  { name: "alex", food: "fried chiken" },
+  { name: "mercer", food: "pizaa" },
+  { name: "alice", food: "burger" },
+  { name: "zaheer", food: "hot dog" },
+  { name: "elizabeth", food: "eggs" }
+]
+function nameAndAllFoods(arrObj,num) {
+  // WRITE YOUR CODE UNDER THIS LINE    
+ var str=arrObj.reduce(function(element,index,array){
+  if (array[index] === num)
+  return element.name 
+  });
+  return str
 }
-
+// i want to make if statment to make it equal to the index of object inside array and return the name  
 
 /*
 Q4
